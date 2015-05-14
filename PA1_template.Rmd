@@ -1,6 +1,6 @@
 
 
-An Exploration of Personal Activity Monitoring Data
+Reproducible Research: Peer Assessment 1
 ===================================================
 Data from https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip
 
