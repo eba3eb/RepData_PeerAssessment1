@@ -1,8 +1,11 @@
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
-
-Reproducible Research: Peer Assessment 1
-===================================================
-Data from https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip
+## Loading and preprocessing the data
 
 We begin by loading required libraries for data cleaning and analysis.
 
@@ -35,8 +38,7 @@ activity.data$date <- as.Date(activity.data$date, "%Y-%m-%d")
 ```
 
 
-Question 1: What is the mean total number of steps taken per day?
-=================================================================
+## What is mean total number of steps taken per day?
 
 
 To answer this question, we first extract the values desired, then plot the data.
@@ -69,8 +71,9 @@ median(day.totals$step.sum)
 ## [1] 10395
 ```
 
-Question 2: What is the average daily activity pattern?
-=======================================================
+
+## What is the average daily activity pattern?
+
 
 To answer this question, we again extract the desired data, then plot a time series of the data.
 
@@ -98,10 +101,10 @@ interval.avg[max.index,]
 ## 1      835  206.1698
 ```
 
-Question 3: Imputing missing values
-===================================
 
-Not necessarily a question... but an important step nevertheless. 
+## Imputing missing values
+
+
 We look at the total number of missing values in the data.
 
 
@@ -168,8 +171,9 @@ median(imputed.totals$step.sum)
 ## [1] 10395
 ```
 
-Question 4: Are there differences in activity patterns between weekdays and weekends?
-=====================================================================================
+
+## Are there differences in activity patterns between weekdays and weekends?
+
 
 To begin with answering this question, we create a new variable, telling us whether or not a date is a weekend or weekday, and extract the necessary values.
 

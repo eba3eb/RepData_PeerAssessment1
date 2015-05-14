@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 
-<title>Reproducible Research: Peer Assessment 1</title>
+<title>Loading and preprocessing the data</title>
 
 <script type="text/javascript">
 window.onload = function() {
@@ -201,9 +201,7 @@ hr {
 </head>
 
 <body>
-<h1>Reproducible Research: Peer Assessment 1</h1>
-
-<p>Data from <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip">https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip</a></p>
+<h2>Loading and preprocessing the data</h2>
 
 <p>We begin by loading required libraries for data cleaning and analysis.</p>
 
@@ -229,7 +227,7 @@ head(activity.data)
 <pre><code class="r">activity.data$date &lt;- as.Date(activity.data$date, &quot;%Y-%m-%d&quot;)
 </code></pre>
 
-<h1>Question 1: What is the mean total number of steps taken per day?</h1>
+<h2>What is mean total number of steps taken per day?</h2>
 
 <p>To answer this question, we first extract the values desired, then plot the data.</p>
 
@@ -254,7 +252,7 @@ hist(day.totals$step.sum, main=&quot;Total Steps per day&quot;, breaks=15, xlab=
 <pre><code>## [1] 10395
 </code></pre>
 
-<h1>Question 2: What is the average daily activity pattern?</h1>
+<h2>What is the average daily activity pattern?</h2>
 
 <p>To answer this question, we again extract the desired data, then plot a time series of the data.</p>
 
@@ -277,10 +275,9 @@ interval.avg[max.index,]
 ## 1      835  206.1698
 </code></pre>
 
-<h1>Question 3: Imputing missing values</h1>
+<h2>Imputing missing values</h2>
 
-<p>Not necessarily a question&hellip; but an important step nevertheless. 
-We look at the total number of missing values in the data.</p>
+<p>We look at the total number of missing values in the data.</p>
 
 <pre><code class="r">sum(is.na(activity.data$steps))
 </code></pre>
@@ -332,7 +329,7 @@ hist(imputed.totals$step.sum, main=&quot;Total Steps per day \n(with imputed val
 <pre><code>## [1] 10395
 </code></pre>
 
-<h1>Question 4: Are there differences in activity patterns between weekdays and weekends?</h1>
+<h2>Are there differences in activity patterns between weekdays and weekends?</h2>
 
 <p>To begin with answering this question, we create a new variable, telling us whether or not a date is a weekend or weekday, and extract the necessary values.</p>
 
